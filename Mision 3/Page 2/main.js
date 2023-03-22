@@ -47,32 +47,40 @@ class Persona {
 }
 
 enviar.addEventListener("click", () => {
-    person = new Persona(
-      nombre.value,
-      apellido.value,
-      area.value,
-      usuario.value,
-      edad.value,
-      email.value
-    );
-  
-    validacion = person.validar();
-    if (validacion) {
-      person.fullName = person.fullName();
-      personas.push(person);
-      console.log(personas);
-  
-      nombre.value = "";
-      apellido.value = "";
-      area.value = "";
+  person = new Persona(
+    nombre.value,
+    apellido.value,
+    area.value,
+    usuario.value,
+    edad.value,
+    email.value
+  );
+
+  validacion = person.validar();
+  if (validacion) {
+    const usuarioExistente = personas.find(p => p.usuario === person.usuario);
+    if (usuarioExistente) {
+      alert("El nombre de usuario ya existe");
       usuario.value = "";
-      edad.value = "";
-      direccion.value = "";
-      email.value = "";
-  
-      localStorage.setItem("Personas", JSON.stringify(personas));
-    } else {
-      alert("Ingrese todos los campos");
+      return;
     }
-  });
+
+    person.fullName = person.fullName();
+    personas.push(person);
+    console.log(personas);
+
+    nombre.value = "";
+    apellido.value = "";
+    area.value = "";
+    usuario.value = "";
+    edad.value = "";
+    direccion.value = "";
+    email.value = "";
+
+    localStorage.setItem("Personas", JSON.stringify(personas));
+  } else {
+    alert("Ingrese todos los campos");
+  }
+});
+
   
