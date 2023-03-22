@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mision 3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <main class="w-screen h-screen flex">
+        <section class="w-[25%] h-full bg-red-600">
+        </section>
+        <section class="w-[75%] flex flex-col gap-[3rem] py-[7rem] px-[4rem] h-full">
+            <section id="header" class="w-full flex ">
+                <div class="flex justify-between w-[60%] ">
+                    <a href="../Page 1/index.html"><img class="cursor-pointer" src="./Assets/Union.png" alt=""></a>
+                    <h1 class="text-2xl font-bold">Registro Personas</h1>
+                </div>
+            </section>
+            <section class="w-full font-bold flex justify-center">
+                <div class="flex flex-col gap-[2rem] ">
+                    <div class="flex gap-[4rem]">
+                        <div>
+                            <p><label>Nombres</label></p>
+                            <input id="nombre" type="text"
+                                class="border-[#ED00D5] border-[0.15rem] rounded-md h-[3rem] w-[18rem] ">
+                        </div>
+                        <div>
+                            <p><label>Apellidos</label></p>
+                            <input id="apellido" type="text"
+                                class="border-[#ED00D5] border-[0.15rem] rounded-md h-[3rem] w-[18rem]">
+                        </div>
+                    </div>
+                    <div class="flex gap-[2rem]">
+                        <div>
+                            <p><label>Area</label></p>
+                            <input id="area" type="text"
+                                class="border-[#ED00D5] border-[0.15rem] rounded-md h-[3rem] w-[12rem]">
+                        </div>
+                        <div>
+                            <p><label>Usuario</label></p>
+                            <input id="usuario" type="text"
+                                class="border-[#ED00D5] border-[0.15rem] rounded-md h-[3rem] w-[12rem]">
+                        </div>
+                        <div>
+                            <p><label>Edad</label></p>
+                            <input id="edad" type="number"
+                                class="border-[#ED00D5] border-[0.15rem] rounded-md h-[3rem] w-[12rem]">
+                        </div>
+                    </div>
+                    <div>
+                        <p><label>Direccion</label></p>
+                        <input id="direccion" type="text"
+                            class="border-[#ED00D5] border-[0.15rem] rounded-md h-[3rem] w-[40rem]">
+                    </div>
+                    <div>
+                        <p><label>Email</label></p>
+                        <input id="email" type="email"
+                            class="border-[#ED00D5] border-[0.15rem] rounded-md h-[3rem] w-[40rem]">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <button id="enviar"
+                            class="rounded-full bg-[#C9231B] text-white w-[10rem] h-[3rem]">Enviar</button>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>

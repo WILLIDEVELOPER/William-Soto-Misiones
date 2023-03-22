@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mision 3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <main class="w-screen h-screen flex">
+        <section class="w-[25%] h-full bg-red-600">
+        </section>
+        <section class="w-[75%] flex flex-col gap-[3rem] py-[7rem] px-[4rem] h-full">
+            <section id="header" class="w-full flex justify-end">
+                <div class="flex justify-between w-[60%] ">
+                    <h1 class="text-2xl font-bold">Usuarios</h1>
+                    <button class="bg-red-600 text-white py-[0.5rem] px-[1rem] w-[13rem] rounded-full"><a
+                            href="../Page 2/index.html">Crear
+                            Usuario</a></button>
+                </div>
+            </section>
+            <section id="buscador" class="flex items-center gap-[0.7rem]">
+                <div class="flex items-center gap-[0.2rem]">
+                    <h1 class="text-xl font-bold">Buscar Usuario</h1>
+                    <div
+                        class="flex justify-center rounded-full bg-slate-200 border-black border-[0.1rem] w-[1.2rem]  h-[1.2rem]">
+                        <p class="text-[0.9rem]  font-bold text-center">?</p>
+                    </div>
+                </div>
+                <div>
+                    <input
+                        id="busqueda"
+                        placeholder="Usuario"
+                        class="w-[25rem] px-[1rem] placeholder:text-black font-bold h-[3rem] border-black border-solid border-[0.1rem] rounded-full bg-slate-200"
+                        type="text">
+                </div>
+            </section>
+            <section id="lista">
+
+                <div class="flex flex-col">
+                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-slate-200 ">
+                                        <tr>
+                                            <th scope="col" class=" text-center px-6 py-3 ">
+                                                <div class="flex gap-[0.5rem] w-full justify-center">
+                                                    Area
+                                                    <img src="./Assets/Vector.png" alt="">
+                                                </div>
+
+                                            </th>
+                                            <th scope="col" class=" text-center px-6 py-3 ">
+                                                <div class="flex gap-[0.5rem] w-full justify-center">
+                                                    Nombre
+                                                    <img src="./Assets/Vector.png" alt="">
+                                                </div>
+                                            </th>
+                                            <th scope="col" class=" text-center px-6 py-3 ">
+                                                <div class="flex gap-[0.5rem] w-full justify-center">
+                                                    Usuario
+                                                    <img src="./Assets/Vector.png" alt="">
+                                                </div>
+                                            </th>
+                                            <th scope="col" class=" text-center px-6 py-3 ">
+                                                <div class="flex gap-[0.5rem] w-full justify-center">
+                                                    Email
+                                                    <img src="./Assets/Vector.png" alt="">
+                                                </div>
+                                            </th>
+                                            <th scope="col" class=" text-center px-6 py-3 ">
+                                                <div class="flex gap-[0.5rem] w-full justify-center">
+                                                    Edad
+                                                    <img src="./Assets/Vector.png" alt="">
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="listica" class="bg-white">
+                                        
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>
