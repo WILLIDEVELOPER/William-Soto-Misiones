@@ -9,6 +9,7 @@ let email = document.getElementById("email");
 let validacion = false;
 let person = {};
 let personas = JSON.parse(localStorage.getItem("Personas")) || [];
+let link = document.getElementById("link")
 
 class Persona {
   nombre;
@@ -78,6 +79,7 @@ enviar.addEventListener("click", () => {
     email.value = "";
 
     localStorage.setItem("Personas", JSON.stringify(personas));
+    location.href = "../Page 1/index.html"
   } else {
     alert("Ingrese todos los campos");
   }

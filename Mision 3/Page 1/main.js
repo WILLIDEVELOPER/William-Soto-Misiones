@@ -1,33 +1,66 @@
 let lista = document.getElementById("listica");
 let busqueda = document.getElementById("busqueda");
-let personas = JSON.parse(localStorage.getItem("Personas"));
+let personas = JSON.parse(localStorage.getItem("Personas")) || [];
 let listica = "";
 let listado = "";
-personas.sort((a, b) => a.area.localeCompare(b.area));
+let contador = {};
+let rowArea;
+let crear = document.getElementById("crear");
+let ultimaArea = ""; // Inicializamos la variable que guardará el último valor de área impreso
+
 personas.forEach((element) => {
-  for (const key in element) {
-    listado = `<tr class='text-center text-black font-bold'><td class='px-6 py-4 whitespace-nowrap'>${element["area"]}</td><td class='px-6  py-4 whitespace-nowrap'>${element["fullName"]}</td><td class='px-6 py-4 whitespace-nowrap'>${element["usuario"]}</td><td class='px-6 py-4 whitespace-nowrap text-red-600'>${element["email"]}</td><td class='px-6 py-4 whitespace-nowrap  font-medium'>${element["edad"]}</td></tr>`;
-  }
-  listica += listado;
+  rowArea = element.area;
+  contador[rowArea] = (contador[rowArea] || 0) + 1;
 });
-if (listica) {
-  lista.innerHTML = listica;
-}
+
+const crearTabla = (element) => {
+  const numPersonas = contador[element.area];
+  const row = document.createElement("tr");
+  let cell = document.createElement("td");
+  row.style.textAlign = "center";
+  cell.setAttribute("rowspan", numPersonas);
+  if (element.area !== ultimaArea) {
+    // Comprobamos si el área actual es igual a la última impresa
+    cell.innerHTML = element.area;
+    ultimaArea = element.area; // Actualizamos el valor de última área impresa
+    row.appendChild(cell);
+  }
+
+  cell = document.createElement("td");
+  cell.innerText = element.fullName;
+  row.appendChild(cell);
+  cell = document.createElement("td");
+  cell.innerText = element.usuario;
+  row.appendChild(cell);
+  cell = document.createElement("td");
+  cell.innerText = element.email;
+  row.appendChild(cell);
+  cell = document.createElement("td");
+  cell.innerText = element.edad;
+  row.appendChild(cell);
+  lista.appendChild(row);
+};
+
+personas.forEach((element) => {
+  crearTabla(element);
+});
 
 busqueda.addEventListener("input", (e) => {
-  let usuario = personas.filter((persona) =>
+  lista.innerHTML = "";
+  let persona = personas.filter((persona) =>
     persona.usuario.includes(e.target.value)
   );
-  usuario.forEach((element) => {
-    for (const key in element) {
-      listado = `<tr class='text-center text-black font-bold'><td class='px-6 py-4 whitespace-nowrap'>${element["area"]}</td><td class='px-6  py-4 whitespace-nowrap'>${element["fullName"]}</td><td class='px-6 py-4 whitespace-nowrap'>${element["usuario"]}</td><td class='px-6 py-4 whitespace-nowrap text-red-600'>${element["email"]}</td><td class='px-6 py-4 whitespace-nowrap  font-medium'>${element["edad"]}</td></tr>`;
+  persona.forEach(el =>{
+    if (e.target.value.length ) {
+      persona.forEach((element) => {
+        crearTabla(element);
+      });
     }
-  });
-  if (e.target.value.length > 0) {
-    if (listado) {
-      lista.innerHTML = listado;
-    }
-  } else {
-    lista.innerHTML = listica;
-  }
+  })
+  
+
+});
+
+crear.addEventListener("click", () => {
+  location.href = "../Page 2/index.html";
 });
