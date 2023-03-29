@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperacion Mision </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <main id="contenedor" class=" sm:flex  ">
+        <section class="sm:grid sm:grid-cols-3 px-[2rem]  sm:gap-[0.85rem]  bg-slate-800">
+            <img class="w-[324px] hidden sm:block  h-[164px] " src="./Assets/Rectangle 6.png" alt="">
+            <img class="w-[324px] hidden sm:block h-[265px] " src="./Assets/Rectangle 7.png" alt="">
+            <img class="w-[324px] hidden sm:block h-[116px] self-center " src="./Assets/Rectangle 8.png" alt="">
+            <img class="w-[324px] hidden sm:block  h-[265px]  " src="./Assets/Rectangle 11.png" alt="">
+            <img class="w-[324px] hidden sm:block  h-[218px] self-center " src="./Assets/Rectangle 10.png" alt="">
+            <img class="w-[324px] hidden sm:block  h-[160px] " src="./Assets/Rectangle 9.png" alt="">
+            <img class="w-[324px] hidden sm:block  h-[164px] self-end" src="./Assets/Rectangle 12.png" alt="">
+            <img class="w-[324px] hidden sm:block h-[116px] self-end" src="./Assets/Rectangle 13.png" alt="">
+            <img class="w-full" src="./Assets/Rectangle 14.png" alt="">
+        </section>
+        <section class=" sm:w-full" >
+            <div class="sm:flex sm:flex-col sm:h-full sm:px-[5rem] sm:gap-[1.5rem] sm:justify-centers sm:w-full ">
+                <div class="sm:sm:flex sm:items-center sm:gap-[0.3rem]">
+                    <img src="./Assets/Logo.svg" alt="">
+                    <h1 class="font-bold sm:text-2xl">Archint</h1>
+                </div>
+                <p class="sm:w-[75%] sm:text-2xl">A new way to experience real state in the infinite virtual space.</p>
+                <div class="sm:flex sm:flex-col sm:gap-[1rem]">
+                    <h1 class="font-bold sm:text-2xl">Login</h1>
+                    <div class="sm:flex sm:flex-col sm:gap-[0.2rem]">
+                        <label >Email</label>
+                        <input id="email" class="sm:px-[1rem] outline-none sm:py-[0.3rem] rounded-lg border-solid border-[#8f9a9c] border-[0.1rem]  placeholder:underline" type="text" id="email" placeholder="robert.langster@gmail.com">
+                        <label hidden id="respuesta"></label>
+                    </div>
+                    <div class="sm:flex sm:flex-col sm:gap-[0.2rem]">
+                        <label >Usuario</label>
+                        <input id="user" class="sm:px-[1rem] outline-none sm:py-[0.3rem] rounded-lg border-solid border-[#8f9a9c] border-[0.1rem]  placeholder:underline" type="text" id="email" placeholder="Antonette">
+                        <label hidden id="respuestaU"></label>
+                    </div>
+                    <div class="sm:flex sm:justify-between">
+                        <div>
+                            <input  checked type="checkbox">
+                            <label >Remember me</label>
+                        </div>
+                        <a > Forgot password?</a>
+                    </div>
+                    <div class="sm:flex sm:justify-between">
+                        <button id="login" class="sm:p-[1.5rem] sm:w-[46%] rounded-lg bg-[#3E334E] sm:text-xl text-white font-bold">
+                            Login
+                        </button>
+                        <button class="sm:p-[1.5rem] border-solid sm:border-[1px] border-[#000000] sm:w-[46%] rounded-lg  sm:text-xl font-bold">
+                            Sign Up
+                        </button>
+                    </div>
+
+                    <p class="flex justify-center mt-[1rem]">Or, login with</p>
+
+                    <div class="flex justify-around mt-[0.5rem]">
+                        <p>Facebook</p>
+                        <p>Linkedin</p>
+                        <p>Google</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <div id="modal" hidden class="absolute p-[1rem] top-[58%] rounded-xl left-[10%] z-10 bg-slate-800 text-white">
+            <h1 class="text-red-500 text-2xl font-bold px-[1rem] py-[0.5rem]">Error Message</h1>
+            <p id="mensaje" class="px-[1rem] text-xl"></p>
+            <div class="w-full mt-[0.8rem] flex justify-center">
+                <button id="close" class="p-[0.5rem] border-[#005bc5] border-solid border-[0.15rem] w-[46%] rounded-xl  text-xl text-white font-bold">
+                    Aceptar
+                </button>
+            </div>
+        </div>
+    </main>
+    <script src="./Main.js"></script>
+</body>
+
+</html>
