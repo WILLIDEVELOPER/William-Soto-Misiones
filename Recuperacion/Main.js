@@ -24,25 +24,22 @@ let mensaje = document.getElementById("mensaje");
 let emailRes = document.getElementById("respuesta");
 let usuarioRes = document.getElementById("respuestaU");
 
-log.addEventListener(
-  "click",
-  () => {
+log.addEventListener("click", () => {
+  if (username.value == "" && email.value == "") {
+    modal.hidden = false;
+    mensaje.innerHTML = `Los valores de inicio de sesion aun no han sido digitados, Por favor escriba sus credenciales.`;
+    setTimeout(() => {
+      email.focus();
+    }, 1200);
+  } else {
     let usuario = users.find((el) => el.username == username.value);
     let setEmail = users.find((el) => el.email == email.value);
 
     if (usuario && setEmail) {
-      location.href = "./Pagina2.html"
+      location.href = "./Pagina2.html";
     } else {
       modal.hidden = false;
-      if (!usuario) {
-        mensaje.innerHTML = `El Nombre de Usuario identificado como:  <span class=" font-extrabold underline text-2xl"> ${username.value}</span>  no existe, Por favor digite un nombre de usuario valido`;
-        username.style.borderColor = "red";
-        usuarioRes.hidden = false;
-        usuarioRes.innerHTML = "Usuario Incorrecto";
-        usuarioRes.style.color = "red";
-        email.style.borderColor = "";
-        emailRes.hidden = true;
-      } else if (!setEmail) {
+      if (!setEmail) {
         mensaje.innerHTML = `El Correo identificado como:  <span class=" font-extrabold underline text-2xl"> ${email.value}</span>  no existe, Por favor digite un nombre de usuario valido`;
         email.style.borderColor = "red";
         emailRes.hidden = false;
@@ -50,12 +47,18 @@ log.addEventListener(
         emailRes.style.color = "red";
         username.style.borderColor = "";
         usuarioRes.hidden = true;
+      } else if (!usuario) {
+        mensaje.innerHTML = `El Nombre de Usuario identificado como:  <span class=" font-extrabold underline text-2xl"> ${username.value}</span>  no existe, Por favor digite un nombre de usuario valido`;
+        username.style.borderColor = "red";
+        usuarioRes.hidden = false;
+        usuarioRes.innerHTML = "Usuario Incorrecto";
+        usuarioRes.style.color = "red";
+        email.style.borderColor = "";
+        emailRes.hidden = true;
       }
     }
-
-    closeM.addEventListener("click", () => {
-      modal.hidden = true;
-    });
   }
-  //   });
-);
+  closeM.addEventListener("click", () => {
+    modal.hidden = true;
+  });
+});
